@@ -13,7 +13,6 @@
             font-size: 12px;
             margin-top: 20px;
         }
-
         ul {
             list-style: none;
         }
@@ -23,10 +22,10 @@
 
     <div ng-app="app" class="app">
         <div ng-controller="ContactController as contact">
-            <input ng-model="contact.search" />
+            <input ng-model="contact.search" ng-change="contact.refilter()" />
 
             <ul>
-                <li ng-repeat="contact in contact.contacts">
+                <li ng-repeat="contact in contact.filteredList track by contact.name">
                     {{ contact.name }}
                 </li>
             </ul>
