@@ -26,8 +26,8 @@
             <input ng-model="contact.search" ng-change="contact.refilter()"/>
 
             <ul>
-                <li ng-repeat="person in contact.filteredList track by person.name">
-                    {{ person.name }}
+                <li ng-repeat="contact in contact.filteredList track by contact.name">
+                    {{ contact.name }}
                 </li>
             </ul>
         </div>
