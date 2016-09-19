@@ -22,12 +22,12 @@
 <body>
 
     <div ng-app="app" class="app">
-        <div ng-controller="ContactController as contact">
-            <input ng-model="contact.search" />
+        <div ng-controller="ContactController as contacts">
+            <input ng-model="contacts.search" ng-change="contacts.refilter()" />
 
             <ul>
-                <li ng-repeat="contact in contact.contacts">
-                    {{ contact.name }}
+                <li ng-repeat="person in contacts.filteredList track by person.name">
+                    {{ person.name }}
                 </li>
             </ul>
         </div>
