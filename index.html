@@ -26,7 +26,7 @@
             <input ng-model="contact.search" />
 
             <ul>
-                <li ng-repeat="contact in contact.contacts">
+                <li ng-repeat="contact in contact.contacts track by contact.username">
                     {{ contact.name }}
                 </li>
             </ul>
