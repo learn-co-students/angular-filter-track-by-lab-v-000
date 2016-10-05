@@ -21,21 +21,21 @@
 </head>
 <body>
 
-    <div ng-app="app" class="app">
-        <div ng-controller="ContactController as contact">
-            <input ng-model="contact.search" />
+  <div ng-app="app" class="app">
+    <div ng-controller="ContactController as contact">
+      <input ng-model="contact.search" ng-change="contact.refilter()" />
 
-            <ul>
-                <li ng-repeat="contact in contact.contacts">
-                    {{ contact.name }}
-                </li>
-            </ul>
-        </div>
+      <ul>
+        <li ng-repeat="contact in contact.filteredList track by contact.name">
+          {{ contact.name }}
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <script src="js/angular.js"></script>
-    <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/ContactController.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/ContactController.js"></script>
 
 </body>
 </html>
