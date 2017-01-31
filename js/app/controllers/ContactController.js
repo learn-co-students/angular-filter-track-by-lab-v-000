@@ -23,10 +23,8 @@ function ContactController($filter) {
 
 	this.search = '';
 
-	// this.filteredList = $filter('filter')(this.contacts, this.search);
-
   this.refilter = function () {
-      this.filteredList = $filter('filter')(this.contacts, this.search);
+    this.filteredList = $filter('filter')(this.contacts, this.search);
   };
 
   this.refilter();
